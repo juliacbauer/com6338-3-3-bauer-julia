@@ -37,19 +37,18 @@ var questionsArr = [
 var numOfCorrect = 0
 
 function runQuiz(){
-    for(var i=0; i < questionsArr.length; i++){
-        var question = questionsArr[i].question
-        var answer = confirm(question)
-        if (answer) {
+    for (var i=0; i<questionsArr.length; i++){
+        if(confirm(questionsArr[i].question) == questionsArr[i].answer){
             numOfCorrect++
         }
     }
-    var Percent = Math.round((numOfCorrect/questionsArr.length) * 100)
+    
+    var Percent = Math.round ((numOfCorrect/questionsArr.length)*100)
 
     if (numOfCorrect > Math.round(questionsArr.length / 1.5)) {
-    alert ("You got a " + Percent + "%. Good job. Keep it up!")
-    } else {
-        alert ("You got a "+ Percent + "%. Great effort!")
-    }
+        alert ("You got a " + Percent + "%. Good job. Keep it up!")
+        } else {
+            alert ("You got a "+ Percent + "%. Great effort!")
+        }
     numOfCorrect = 0
 }
